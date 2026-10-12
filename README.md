@@ -5,78 +5,81 @@
 <h1 align="center">MuteAds</h1>
 
 <p align="center">
-  Block ads and trackers on your phone, your computer and your browser.<br>
-  One switch, five filter levels, no account.
+  Silence ads and trackers across your phone, computer, and browser.<br>One switch, five flexible filter levels, zero accounts, 100% on-device.
 </p>
 
 <p align="center">
-  <b>English</b> · <a href="README.vi.md">Tiếng Việt</a>
+  <b>English</b> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.ms.md">Bahasa Melayu</a> · <a href="README.es.md">Español</a> · <a href="README.fr.md">Français</a><br>
+  <a href="README.de.md">Deutsch</a> · <a href="README.pt.md">Português</a> · <a href="README.it.md">Italiano</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.pl.md">Polski</a> · <a href="README.sv.md">Svenska</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.cs.md">Čeština</a> · <a href="README.ro.md">Română</a><br>
+  <a href="README.hu.md">Magyar</a> · <a href="README.el.md">Ελληνικά</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.ar.md">العربية</a> · <a href="README.fa.md">فارسی</a> · <a href="README.he.md">עברית</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.bn.md">বাংলা</a> · <a href="README.th.md">ไทย</a> · <a href="README.fil.md">Filipino</a>
 </p>
 
 ---
 
-## What it does
+## Why we built MuteAds
 
-MuteAds stops ads and trackers by refusing to connect to the domains that serve them. It does not need root, does not need an account, and does not send your browsing history anywhere: filtering happens on your own device.
+Like you, we grew tired of the modern internet: flashy banners screaming for attention, invasive tracker scripts recording every click, battery draining in the background, and bloated ad blockers that slow down your machine or sell out to advertisers. We built MuteAds with a single, uncompromising goal: cut ads and trackers off at the root by refusing connections to their domains before they even touch your screen.
 
-- **Blocks ads and trackers by domain**, across every app on the device (Android, desktop) or inside the browser (extension).
-- **Five filter levels**, from "Basic" (fewest false positives) to "Maximum" (blocks the most, some pages may break). The default is level 3.
-- **YouTube ad blocking** in the browser extension, active as soon as the switch is on.
-- **One switch.** Turn it off and everything goes back to normal.
-- **Encrypted DNS** upstream: DNS-over-HTTPS and DNS-over-TLS are supported on Android and desktop.
-- **Your own rules**: allowlist, blocklist and custom IP mappings, with `*` wildcards.
+No root required. No account or sign-up. And most importantly: **not a single byte of your browsing activity ever leaves your device**. Everything is resolved right where it belongs: locally on your hardware.
 
-## Download
+- **Domain-level blocking that just works**: Blocks ads and creepy analytics across every single app on your system (Android, desktop) or right inside your favorite browser (extension).
+- **5 tailored filter levels**: From "Basic" (super safe, won't break client portals or work sites) to "Maximum" (rock-solid privacy shield). Level 3 is our carefully tuned default.
+- **Built-in YouTube ad blocking**: Preloaded in the browser extension. Flip the switch and watch videos without jarring interruptions.
+- **Single master switch**: Life is already complicated enough. Need to temporarily bypass filtering for testing? One tap turns it off; flip it back when you're done.
+- **Modern encrypted DNS**: Full native support for DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT) on Android and desktop to keep local snoops and ISPs out of your queries.
+- **Total rule ownership**: Full support for custom allowlists, blocklists, and direct IP overrides with wildcard `*` matching.
 
-> MuteAds is in early release (version 0.1). Installers are published on the [Releases](../../releases) page as they become ready. Store listings are in preparation.
+## Downloads & Early Access
 
-| Platform | How it works | Status |
+> MuteAds is currently in early release (v0.1). We are actively polishing the builds and preparing official store submissions. In the meantime, direct installers are available immediately on the [Releases](../../releases) page.
+
+| Platform | How it works under the hood | Status |
 | --- | --- | --- |
-| **Android** | Local VPN that filters DNS on the device. No root. Android 4.2+ | APK on [Releases](../../releases) |
-| **Windows** | Local DNS filter for the whole computer (x64, ARM64) | On [Releases](../../releases) |
-| **macOS** | Local DNS filter for the whole computer | On [Releases](../../releases) |
-| **Linux** | DNS proxy for one machine or the whole network (requires Java) | On [Releases](../../releases) |
-| **Chrome, Edge, Brave, Opera, Vivaldi, Arc** | Browser extension | Store listing in preparation |
-| **Firefox** 128+ | Browser extension | Store listing in preparation |
+| **Android** | Local loopback VPN filtering DNS on-device. No root. Android 4.2+ | Direct APK on [Releases](../../releases) |
+| **Windows** | System-wide local DNS filter service (x64, ARM64) | Available on [Releases](../../releases) |
+| **macOS** | System-wide local DNS resolver filter | Available on [Releases](../../releases) |
+| **Linux** | Standalone DNS proxy for your workstation or whole home LAN (requires Java) | Available on [Releases](../../releases) |
+| **Chrome, Edge, Brave, Opera, Vivaldi, Arc** | Lightweight MV3 browser extension using high-performance rules | Store review in preparation |
+| **Firefox 128+** | Fast declarative browser extension | Store review in preparation |
 
-## Filter levels
+## Filter Levels
 
-| Level | Name | What it blocks |
+| Level | Profile | What gets blocked |
 | --- | --- | --- |
-| 1 | Basic | Highest-priority domains only. Least likely to block something by mistake. |
-| 2 | Balanced | Wider coverage. |
-| 3 | Extended | Broad coverage. **Default.** |
-| 4 | Strict | Very broad. May start to block things by mistake. |
-| 5 | Maximum | The whole list except social networks. Some pages may not display correctly. |
+| 1 | Basic | Strictly the highest-priority ad and tracking networks. Minimal risk of false positives. |
+| 2 | Balanced | Broader coverage including common analytics and telemetry platforms. |
+| 3 | Extended | Comprehensive blocking for daily browsing. **Default sweet spot.** |
+| 4 | Strict | Aggressive filtering. May occasionally interfere with third-party embed widgets. |
+| 5 | Maximum | The full blocklist excluding essential social networks. Some complex pages may need whitelisting. |
 
-If a site stops working, lower the level or turn the switch off for a moment.
+💡 **Dev tip:** If a site misbehaves or refuses to load a necessary widget, simply bump the filter down a notch or flick the switch off for a moment.
 
-## How it works
+## How it works (No black magic!)
 
-Every time an app or a page wants to load something, it first asks for the address of a domain name. MuteAds answers that question itself:
+Every time an application or web page wants to fetch an asset, it must first ask for the IP address behind a domain name (via DNS). MuteAds acts as your local gatekeeper:
 
-- If the domain is on the block list, MuteAds answers "nowhere" and the ad or tracker never loads.
-- Otherwise the question is passed on to a normal DNS server and the page loads as usual.
+- If the domain belongs to a known ad network, telemetric tracker, or spyware host, MuteAds immediately answers: *"Non-existent (NXDOMAIN)"*. The connection never happens, saving bandwidth and processor cycles.
+- If it's genuine content you actually requested, the query passes smoothly to your chosen upstream DNS server, loading instantly as expected.
 
-On Android this runs through a local VPN that stays on the device; no traffic is sent to a MuteAds server. On desktop the app becomes the DNS server of your computer. The browser extension uses the browser's built-in blocking API (`declarativeNetRequest`) with the same list.
+On Android, this is accomplished via a **local loopback VPN** that never routes your traffic outside your phone. On desktop, MuteAds configures itself as your computer's local DNS resolver. In browsers, the extension utilizes the native, lightning-fast `declarativeNetRequest` engine.
 
-## Privacy
+## Privacy: We don't want your data
 
-- No account and no sign-up.
-- Filtering runs on your device. MuteAds has no server that sees the sites you visit.
-- The only download the apps make on their own is the block list, refreshed about once a week.
-- The browser extension asks only for the permissions it uses: blocking requests, saving your settings, a weekly refresh timer, and access to `youtube.com` for YouTube ad blocking.
+- **No accounts, no email, no tracking**: We literally have no sign-up forms and no central user database.
+- **Zero cloud logging**: Filtering runs locally on your machine. We operate zero servers that see or log the websites you visit.
+- **Clean updates**: The only outbound network activity initiated by the app is fetching updated domain blocklists roughly once a week.
+- **Minimal permissions**: The browser extension requests only what is strictly required to block network requests, persist your local settings, manage the weekly update alarm, and inject rules on `youtube.com`.
 
-## Good to know
+## Good to know & Pro tips
 
-- **Android:** turn off *Private DNS* in the network settings, otherwise the filter is bypassed. Allow the app to run in the background without battery optimisation.
-- Domain-based blocking cannot remove ads that are served from the same domain as the content itself (for example inside some mobile apps). The browser extension handles YouTube separately for that reason.
-- YouTube changes often. If ads come back, update to the latest version.
+- **Android users:** Be sure to disable *Private DNS* in your phone's Android network settings, otherwise the operating system will bypass local VPN filters. Also exclude MuteAds from aggressive battery savers.
+- **First-party ads:** Pure DNS filtering cannot strip ads served directly from the same domain as the content (e.g. within certain proprietary mobile apps). That is why our browser extension features a dedicated content-level engine for YouTube.
+- **The YouTube cat-and-mouse game:** Video platforms tweak their ad delivery scripts regularly. If an ad ever manages to slip through, make sure you are running the latest version of the extension.
 
-## Feedback
+## Feedback & Community
 
-Found a site that breaks, or an ad that gets through? Open an [issue](../../issues) with the address of the page and the filter level you were using.
+Spotted a broken webpage or a rogue ad that snuck past the filter? Please open an [Issue](../../issues) with the page URL and the filter level you had active. We read every report and genuinely appreciate your help making MuteAds better!
 
-## License
+## License & Acknowledgements
 
-The Android app and the standalone DNS proxy are based on [personalDNSfilter](https://github.com/IngoZenz/personalDNSfilter) and are released under the GNU General Public License, version 2 or later. The program comes with no warranty.
+The Android app and standalone DNS proxy are built upon the outstanding open-source foundation of [personalDNSfilter](https://github.com/IngoZenz/personalDNSfilter) by Ingo Zenz, released under the GNU General Public License v2 or later. MuteAds is distributed without warranty in the spirit of open, user-first software.
